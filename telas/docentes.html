@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SEPT - Docentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SEPT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docentes.html">Docentes</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-auto">
+                    <button class="btn btn-success me-3" type="button">Acessibilidade</button>
+                    <button class="btn btn-secondary" type="button">Idioma</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Docentes SEPT</h1>
+        <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar por nome">
+        <ul id="docentesList" class="list-group mt-4"></ul>
+    </div>
+
+    <footer class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <img src="https://seeklogo.com/images/U/UFPR-logo-F52F55C42F-seeklogo.com.png" alt="Logo UFPR"
+                        height="95">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <p class="fw-bold mb-0">SEPT - Setor de Educação Profissional e Tecnológica</p>
+                    <p class="m-0">Rua Dr. Alcides Vieira Arcoverde, 1225</p>
+                    <p class="m-0">Jardim das Américas, Curitiba - PR</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <p class="fw-bold mb-0">Contato</p>
+                    <p class="m-0">Telefone: (41) 3361-4500</p>
+                    <p class="m-0">E-mail: sept@ufpr.br</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Array docentes
+        var docentes = [
+            { nome: "Profa. Adriana Cristina Sambugaro de Mattos Brahim", email: "adrianabrahim@ufpr.br" },
+            { nome: "Prof. Adriano Rodrigues de Moraes", email: "adrianomoraes@ufpr.br" },
+            { nome: "Prof. Alessandro Brawerman", email: "brawerman@ufpr.br" },
+            { nome: "Prof. Alexander Robert Kutzke", email: "alexander@ufpr.br" },
+            { nome: "Profa. Aline Mendonça Fraga", email: "aline.fraga@ufpr.br" },
+            { nome: "Prof. Allan Valenza da Silveira", email: "allanvalenza@ufpr.br" },
+            { nome: "Profa. Ana Carolina de Araújo Silva", email: "anacarolaraujosilva@ufpr.br" },
+            { nome: "Prof. André Nozomu Sadoyama Barrios", email: "andrenozomu@ufpr.br" },
+            { nome: "Prof. André Vinícius Martinez Gonçalves", email: "andre.martinez@ufpr.br" },
+            { nome: "Profa. Andreia de Jesus", email: "andreia.jesus@ufpr.br" },
+            { nome: "Prof. Arnaud Francis Bonduelle", email: "arnaud@ufpr.br" },
+            { nome: "Prof. Arno Paulo Schmitz", email: "arno@ufpr.br" },
+            { nome: "Prof. Ary Fabio Giordani Daniel", email: "arygiordani@ufpr.br" },
+            { nome: "Profa. Carina Folena Cardoso Paes", email: "carinafolena@ufpr.br" },
+            { nome: "Profa. Carla Regina Mazia Rosa", email: "carla.mazia@ufpr.br" },
+            { nome: "Prof. Christian Mendez Alcantara", email: "cmalcantara@ufpr.br" },
+            { nome: "Prof. Cícero Osvaldo Coati", email: "cicerocoati@ufpr.br" },
+            { nome: "Profa. Cláudia Madruga Cunha", email: "claudiamcunha@ufpr.br" },
+            { nome: "Profa. Clecí Körbes", email: "cleci.korbes@ufpr.br" },
+            { nome: "Prof. Cléverson Ribas Carneiro", email: "cleversonribas@ufpr.br" },
+            { nome: "Profa. Cristiane dos Santos Souza", email: "cristianesouza@ufpr.br" },
+            { nome: "Profa. Daniele Cristine Nickel", email: "daniele.nickel@ufpr.br" },
+            { nome: "Prof. Dieval Guizelini", email: "dieval@ufpr.br" },
+            { nome: "Profa. Dione Maria Menz", email: "dionemenz@ufpr.br" },
+            { nome: "Prof. Douglas Henrique Fockink", email: "douglasfockink@ufpr.br" },
+            { nome: "Profa. Eliana Maria Ieger", email: "ieger@ufpr.br" },
+            { nome: "Prof. Evandro Luiz Brandão", email: "evandrobrandao@ufpr.br" },
+            { nome: "Profa. Fernanda Landolfi Maia", email: "fmaia@ufpr.br" },
+            { nome: "Profa. Flávia Lúcia Bazan Bespalhok", email: "flavia.bespalhok@ufpr.br" },
+            { nome: "Profa. Giselle Munhoz Alves", email: "gmunhoz@ufpr.br" },
+            { nome: "Prof. Guilherme Ricardo dos Santos Souza e Silva", email: "guilherme.ricardo@ufpr.br" },
+            { nome: "Profa. Iara Maria Bruz", email: "iarabruz@ufpr.br" },
+            { nome: "Prof. Igor Mottinha Fomin", email: "fomin@ufpr.br" },
+            { nome: "Profa. Isabel Romero Grova Wutkiewicz", email: "isabelgrova@ufpr.br" },
+            { nome: "Prof. Jaime Wojciechowski", email: "jaimewo@ufpr.br" },
+            { nome: "Profa. Janaina Schoeffel Brodzinski", email: "janainaschoeffel@ufpr.br" },
+            { nome: "Prof. Jean Carlos Gonçalves", email: "jeancarllos@ufpr.br" },
+            { nome: "Profa. Jeroniza Nunes Marchaukoski", email: "jeroniza@ufpr.br" },
+            { nome: "Prof. João Eugênio Marynowski", email: "jeugenio@ufpr.br" },
+            { nome: "Profa. Joelma Zambão Estevam", email: "joelma.estevam@ufpr.br" },
+            { nome: "Prof. Jorge José de Oliveira", email: "jorgeoliveira@ufpr.br" },
+            { nome: "Prof. José Elmar Feger", email: "elmar@ufpr.br" },
+            { nome: "Prof. José Roberto do Carmo Junior", email: "carmojr@ufpr.br" },
+            { nome: "Prof. Juarez Bergmann Filho", email: "juarezbergmann@ufpr.br" },
+            { nome: "Profa. Juliana da Silva Passos", email: "julianapassos@ufpr.br" },
+            { nome: "Profa. Juliane Martins", email: "professorajuliane@ufpr.br" },
+            { nome: "Prof. Julio Cezar Martins", email: "jcezarmartins@ufpr.br" },
+            { nome: "Prof. Leandro Henrique Merino Mombach", email: "leandro.mombach@ufpr.br" },
+            { nome: "Profa. Letícia Salem Herrmann Lima", email: "leticia.herrmann@ufpr.br" },
+            { nome: "Profa. Lidia Beatriz Selmo de Foti", email: "lidia.beatriz@ufpr.br" },
+            { nome: "Profa. Lilian dos Santos Silva Ribeiro", email: "lilian.ssribeiro@ufpr.br" },
+            { nome: "Profa. Lucí Regina Panka Archegas", email: "luci.archegas@ufpr.br" },
+            { nome: "Prof. Luiz Antonio Passos Cardoso", email: "lcardoso@ufpr.br" },
+            { nome: "Prof. Luiz Antonio Pereira Neves", email: "neves@ufpr.br" },
+            { nome: "Prof. Marcelo Ribeiro Losso", email: "marcelosso@ufpr.br" },
+            { nome: "Profa. Márcia Regina Ferreira", email: "marciaregina@ufpr.br" },
+            { nome: "Profa. Maria Valéria da Costa", email: "valerialua@ufpr.br" },
+            { nome: "Prof. Mario de Paula Soares Filho", email: "paulasoares@ufpr.br" },
+            { nome: "Profa. Marion do Rocio Foerster", email: "marionfoerster@ufpr.br" },
+            { nome: "Profa. Marly de Castro Campos Coati", email: "marlycoati@ufpr.br" },
+            { nome: "Profa. Maura Regina Franco", email: "maurafranco@ufpr.br" },
+            { nome: "Prof. Mauro Antonio Alves Castro", email: "mauro.castro@ufpr.br" },
+            { nome: "Prof. Paulo Eduardo Sobreira Moraes", email: "paulomoraes@ufpr.br" },
+            { nome: "Prof. Pedro Rodrigues Torres Júnior", email: "pedro.torres@ufpr.br" },
+            { nome: "Profa. Prila Leliza Calado", email: "prila@ufpr.br" },
+            { nome: "Prof. Rafael Augustus Sêga", email: "rafasega@ufpr.br" },
+            { nome: "Prof. Rafael Romualdo Wandresen", email: "rafael.wandresen@ufpr.br" },
+            { nome: "Profa. Rafaela Mantovani Fontana", email: "rafaela.fontana@ufpr.br" },
+            { nome: "Prof. Razer Anthom Nizer Rojas Montaño", email: "razer@ufpr.br" },
+            { nome: "Prof. Roberto Tadeu Raittz", email: "raittz@ufpr.br" },
+            { nome: "Prof. Rodrigo Mateus Pereira", email: "rodrigomateus@ufpr.br" },
+            { nome: "Profa. Sandra Eleine Romais Leonardi", email: "sandra.eleine@ufpr.br" },
+            { nome: "Profa. Sandra Simm Rohrich", email: "sandrasimm@ufpr.br" },
+            { nome: "Profa. Sandramara Scandelari Kusano de Paula Soares", email: "sskusano@ufpr.br" },
+            { nome: "Prof. Sávio Marcelo Leite Moreira da Silva", email: "savio@ufpr.br" },
+            { nome: "Profa. Silvana Maria Carbonera", email: "silvana.carbonera@ufpr.br" },
+            { nome: "Profa. Silvia Cristina Sprengel de Alencar", email: "silvia.alencar@ufpr.br" },
+            { nome: "Profa. Simone Valaski", email: "valaski@ufpr.br" },
+            { nome: "Profa. Soraya Sugayama", email: "yayasugayama@ufpr.br" },
+            { nome: "Prof. Thiago Corrêa de Freitas", email: "tcf@ufpr.br" },
+            { nome: "Prof. Thiago Lima Breus", email: "thiago.breus@ufpr.br" },
+            { nome: "Profa. Valeria Verónica Quiroga", email: "valeria.quiroga@ufpr.br" },
+            { nome: "Profa. Vanessa Gonçalves Curty", email: "vanessa.curty@ufpr.br" },
+            { nome: "Profa. Zélia Freiberger", email: "freiberger@ufpr.br" }
+        ];
+
+        var docentesHtml = '';
+
+        // Função para pesquisar os docentes
+        function searchDocentes() {
+            var searchInput = document.getElementById('searchInput');
+            var searchText = searchInput.value.toLowerCase();
+
+            var filteredDocentes = docentes.filter(function (docente) {
+                var nome = docente.nome.toLowerCase();
+                return nome.includes(searchText);
+            });
+
+            docentesHtml = '';
+
+            filteredDocentes.forEach(function (docente) {
+                docentesHtml += '<li class="list-group-item">' + docente.nome + ' - <a href="mailto:' + docente.email + '">' + docente.email + '</a></li>';
+            });
+
+            if (filteredDocentes.length === 0) {
+                docentesHtml = '<li class="list-group-item">Nenhum docente encontrado</li>';
+            }
+
+            document.getElementById('docentesList').innerHTML = docentesHtml;
+        }
+
+        // Chamando a função de pesquisa quando o usuário digitar algo no campo de pesquisa
+        document.getElementById('searchInput').addEventListener('input', searchDocentes);
+
+        // Chamando a função de pesquisa inicialmente para exibir todos os docentes
+        searchDocentes();
+    </script>
+</body>
+
+</html>
