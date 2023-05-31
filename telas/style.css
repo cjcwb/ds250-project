@@ -14,3 +14,35 @@ h1 {
     -font-family: sans-serif;
     color: darkslateblue;
 }
+
+h2 {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #004BA4;
+  margin: 3vh;
+}
+
+.noticias-container {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  flex-wrap: wrap;
+}
+
+.noticia-title {
+  margin: 1.5vh;
+}
+
+.noticia-content {
+  margin: 1.5vh;
+}
+
+.noticia-card {
+  background-color: #D9D9D9;
+  margin-left: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 2vh;
+  height: 18vh;
+  width: 25vh;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
