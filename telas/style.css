@@ -1,12 +1,16 @@
-body {
-    min-height: 100vh;
-    position: relative;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+  flex: 1;
 }
 
 h1 {
