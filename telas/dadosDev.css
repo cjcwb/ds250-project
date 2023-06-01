@@ -1,0 +1,67 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+  
+h1 {
+    text-align: center;
+    color: #333;
+}
+  
+.conteiner {
+    margin-top: 40px;
+}
+  
+  /* Estilos para cada desenvolvedor */
+.dev1, .dev2, .dev3, .dev4 {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+  
+.nome {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+.nome h2 {
+    color: #333;
+    font-size: 24px;
+}
+  
+.img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.img img {
+    width: 150px;
+    height: auto;
+    border-radius: 5%;
+}
+
+.contato {
+    text-align: center;
+}
+  
+.dadosDeContato {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.dadosDeContato li {
+    margin-bottom: 10px;
+}
+  
+.dadosDeContato li a {
+    color: #333;
+    text-decoration: none;
+}
+  
+.dadosDeContato li a:hover {
+    text-decoration: underline;
+}
+  

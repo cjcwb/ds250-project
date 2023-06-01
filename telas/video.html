@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vídeo sobre a instituição</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        #player-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #player {
+            width: 560px;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video sobre o SEPT</h1>
+        
+        <p>O Setor de Educação Profissional e Tecnológica (SEPT) é a unidade de ensino, pesquisa e extensão da Universidade Federal do Paraná que coordena os cursos de educação Profissional e Tecnológica, a ele vinculados, em todos os níveis. O SEPT oferece cursos de formação profissional para jovens e adultos atuarem em funções técnicas profissionais, segundo a área de identificação, atendendo as demandas regionais.</p>
+        
+        <div id="player-container">
+            <div id="player"></div>
+        </div>
+    </div>
+
+    <script>
+        function onYouTubeIframeAPIReady() {
+            var player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'vu7iJQ6AY-E',
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
