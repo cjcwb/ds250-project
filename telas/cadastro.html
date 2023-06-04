@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>SEPT</title>
@@ -8,12 +9,13 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
 
+<body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">SEPT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -24,40 +26,185 @@
           <li class="nav-item">
             <a class="nav-link" href="cursos.html">Cursos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="cadastro.html">Cadastro</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="cadastro.html">Cadastro</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="docentes.html">Docentes</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video.html">Sobre o SEPT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dadosDev.html">Quem nós somos?</a>
+          </li>
         </ul>
         <div class="d-flex ms-auto">
-            <button class="btn btn-success me-3" type="button">Acessibilidade</button>
-            <button class="btn btn-secondary" type="button">Idioma</button>
-            <button class="btn-icon"><i class="fa fa-search"></i></button>
+          <button class="btn btn-success me-3" type="button">Acessibilidade</button>
+          <button class="btn btn-secondary" type="button">Idioma</button>
+          <button class="btn-icon"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
   </nav>
-
+  <div class="container">
+    <h2>Formulário de Cadastro</h2>
+    <div class="form">
+      <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">CPF</span>
+          </div>
+          <input type="text" class="form-control" aria-label="CPF" aria-describedby="inputGroup-sizing-default" id="cpf"
+            name="cpf" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Nome" aria-describedby="inputGroup-sizing-default"
+            id="nome" name="nome" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+          </div>
+          <input type="email" class="form-control" aria-label="Email" aria-describedby="inputGroup-sizing-default"
+            id="email" name="email" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Sexo</span>
+          </div>
+          <select class="form-select form-select-md" aria-label=".form-select-lg example" id="sexo" name="sexo"
+            required>
+            <option value="">Selecione</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+            <option value="O">Outro</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Estado Civil</span>
+          </div>
+          <select class="form-select form-select-md" aria-label=".form-select-lg example" id="estadoCivil"
+            name="estadoCivil" required>
+            <option value="">Selecione</option>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viuvo">Viúvo</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nacionalidade</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Nacionalidade"
+            aria-describedby="inputGroup-sizing-default" id="nacionalidade" name="nacionalidade" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">RG</span>
+          </div>
+          <input type="text" class="form-control" aria-label="RG" aria-describedby="inputGroup-sizing-default" id="rg"
+            name="rg" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Orgão Emissor</span>
+          </div>
+          <input type="text" class="form-control" aria-label="orgaoEmissor" aria-describedby="inputGroup-sizing-default"
+            id="orgaoEmissor" name="orgaoEmissor" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Estado do RG</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Estado do RG" aria-describedby="inputGroup-sizing-default"
+            id="estadoRG" name="estadoRG" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nome da Mãe</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Nome da Mãe" aria-describedby="inputGroup-sizing-default"
+            id="nomeMae" name="nomeMae" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nome do Pai</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Nome do Pai" aria-describedby="inputGroup-sizing-default"
+            id="nomePai" name="nomePai" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">CEP</span>
+          </div>
+          <input type="text" class="form-control" aria-label="CEP" aria-describedby="inputGroup-sizing-default" id="cep"
+            name="cep" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Endereço</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Endereço" aria-describedby="inputGroup-sizing-default"
+            id="endereco" name="endereco" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Número</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Número" aria-describedby="inputGroup-sizing-default"
+            id="numero" name="numero" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Complemento</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Complemento" aria-describedby="inputGroup-sizing-default"
+            id="complemento" name="complemento" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+          </div>
+          <input type="password" class="form-control" aria-label="Senha" aria-describedby="inputGroup-sizing-default"
+            id="senha" name="senha" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Confirmação de Senha</span>
+          </div>
+          <input type="password" class="form-control" aria-label="Confirmação de Senha"
+            aria-describedby="inputGroup-sizing-default" id="confirmSenha" name="confirmSenha" required>
+        </div>
+        <div class="input-group mb-3">
+          <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 
-<footer class="bg-primary text-white py-4 fixed-bottom">
+<footer class="bg-primary text-white py-4">
   <div class="container">
-      <div class="row">
-          <div class="col-md-3 mb-4">
-              <img src="https://seeklogo.com/images/U/UFPR-logo-F52F55C42F-seeklogo.com.png" alt="Logo UFPR" height="95">
-          </div>
-          <div class="col-md-6 mb-4">
-              <p class="fw-bold mb-0">SEPT - Setor de Educação Profissional e Tecnológica</p>
-              <p class="m-0">Rua Dr. Alcides Vieira Arcoverde, 1225</p>
-              <p class="m-0">Jardim das Américas, Curitiba - PR</p>
-          </div>
-          <div class="col-md-3 mb-4">
-              <p class="fw-bold mb-0">Contato</p>
-              <p class="m-0">Telefone: (41) 3361-4500</p>
-              <p class="m-0">E-mail: sept@ufpr.br</p>
-          </div>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <img src="https://seeklogo.com/images/U/UFPR-logo-F52F55C42F-seeklogo.com.png" alt="Logo UFPR" height="95">
       </div>
+      <div class="col-md-6 mb-4">
+        <p class="fw-bold mb-0">SEPT - Setor de Educação Profissional e Tecnológica</p>
+        <p class="m-0">Rua Dr. Alcides Vieira Arcoverde, 1225</p>
+        <p class="m-0">Jardim das Américas, Curitiba - PR</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <p class="fw-bold mb-0">Contato</p>
+        <p class="m-0">Telefone: (41) 3361-4500</p>
+        <p class="m-0">E-mail: sept@ufpr.br</p>
+      </div>
+    </div>
   </div>
 </footer>

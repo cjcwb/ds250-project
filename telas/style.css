@@ -16,12 +16,11 @@ body {
 
 #listaDocentes {
   margin-bottom: 20px;
-  margin-top: 10px;
 }
-  
+
 h1 {
   font-weight: bold;
-  -font-family: sans-serif;
+  font-family: sans-serif;
   color: darkslateblue;
 }
 
@@ -29,7 +28,8 @@ h2 {
   font-weight: bold;
   font-family: sans-serif;
   color: #004BA4;
-  margin: 3vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .btn-icon {
@@ -62,7 +62,7 @@ h2 {
 
 .noticia-card {
   background-color: #D9D9D9;
-  margin-left: 2vh;
+  margin-right: 2vh;
   margin-bottom: 2vh;
   border-radius: 2vh;
   height: 280px;

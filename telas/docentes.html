@@ -10,40 +10,45 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">SEPT</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cursos.html">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastro.html">Cadastro</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="docentes.html">Docentes</a>
-                    </li>
-                </ul>
-                <div class="d-flex ms-auto">
-                    <button class="btn btn-success me-3" type="button">Acessibilidade</button>
-                    <button class="btn btn-secondary" type="button">Idioma</button>
-                    <button class="btn-icon"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SEPT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cursos.html">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html">Cadastro</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="docentes.html">Docentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video.html">Sobre o SEPT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dadosDev.html">Quem nós somos?</a>
+          </li>
+        </ul>
+        <div class="d-flex ms-auto">
+            <button class="btn btn-success me-3" type="button">Acessibilidade</button>
+            <button class="btn btn-secondary" type="button">Idioma</button>
+            <button class="btn-icon"><i class="fa fa-search"></i></button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
     <div class="container" id="listaDocentes">
-        <h1>Docentes SEPT</h1>
+        <h2>Docentes SEPT</h2>
+
         <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar por nome">
         <ul id="docentesList" class="list-group mt-4"></ul>
     </div>
