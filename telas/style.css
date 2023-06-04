@@ -12,6 +12,9 @@ body {
 
 .container {
   flex: 1;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #listaDocentes {
@@ -27,9 +30,16 @@ h1 {
 h2 {
   font-weight: bold;
   font-family: sans-serif;
-  color: #004BA4;
+  color: #004ba4;
   margin-top: 3vh;
   margin-bottom: 3vh;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
 }
 
 .btn-icon {
@@ -41,7 +51,7 @@ h2 {
   margin-left: 1vh;
 }
 
-.navbar-nav li.nav-item.active>a {
+.navbar-nav li.nav-item.active > a {
   color: #fff;
 }
 
@@ -61,11 +71,77 @@ h2 {
 }
 
 .noticia-card {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin-right: 2vh;
   margin-bottom: 2vh;
   border-radius: 2vh;
   height: 280px;
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#player-container {
+  display: flex;
+  justify-content: center;
+  padding: 5vh;
+}
+
+#player {
+  width: 560px;
+  height: 315px;
+}
+
+/* Estilos para cada desenvolvedor */
+.dev1,
+.dev2,
+.dev3,
+.dev4 {
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nome {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.nome h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+.img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.img img {
+  width: 150px;
+  height: auto;
+  border-radius: 5%;
+}
+
+.contato {
+  text-align: center;
+}
+
+.dadosDeContato {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dadosDeContato li {
+  margin-bottom: 10px;
+}
+
+.dadosDeContato li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dadosDeContato li a:hover {
+  text-decoration: underline;
 }

@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">SEPT</a>
@@ -24,7 +23,7 @@
           <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="cursos.html">Cursos</a>
           </li>
           <li class="nav-item">
@@ -36,7 +35,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sobre.html">Sobre o SEPT</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="devs.html">Quem nós somos?</a>
           </li>
         </ul>
@@ -48,72 +47,79 @@
       </div>
     </div>
   </nav>
-
   <div class="container">
-    <h2>Cursos SEPT</h2>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Curso</th>
-          <th scope="col">Duração</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Luteria
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Secretariado
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                TADS
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                #####
-              </button>
-            </div>
-          </td>
-          <td># anos</td>
-        </tr>
-      </tbody>
-    </table>
-
+    <h2>Quem nós somos?</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="dev1">
+          <div class="nome">
+            <h2>Davi Colares</h2>
+          </div>
+          <div class="img">
+            <img src="imagens/311012230_167080026020924_1842374802861062902_n.jpg" alt="">
+          </div>
+          <div class="contato">
+            <ul class="dadosDeContato">
+              <li>Email: colaresdavi45@gmail.com</li>
+              <li><a href="https://www.linkedin.com/in/davi-colares-604547215">Linkedin</a></li>
+              <li>Data de última atualização: 30/05/2023</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dev1">
+          <div class="nome">
+            <h2>Leonardo Oneda</h2>
+          </div>
+          <div class="img">
+            <img src="imagens/305597377_582555350419502_5836284401460471535_n.jpg" alt="">
+          </div>
+          <div class="contato">
+            <ul class="dadosDeContato">
+              <li>Email: leeo.oneda@gmail.com</li>
+              <li><a href="https://www.linkedin.com/in/leonardo-da-silva-oneda-3518261a3">Linkedin</a></li>
+              <li>Data de última atualização: 30/05/2023</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dev1">
+          <div class="nome">
+            <h2>Lucas Dias</h2>
+          </div>
+          <div class="img">
+            <img src="imagens/1685563342623.jpeg" alt="">
+          </div>
+          <div class="contato">
+            <ul class="dadosDeContato">
+              <li>Email: lucasdias789@gmail.com</li>
+              <li><a href="https://www.linkedin.com/in/lucas-dias-422332232/">Linkedin</a></li>
+              <li>Data de última atualização: 30/05/2023</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dev1">
+          <div class="nome">
+            <h2>Marco Junkes</h2>
+          </div>
+          <div class="img">
+            <img src="imagens/FOTO_UTILIZAR.jpg" alt="">
+          </div>
+          <div class="contato">
+            <ul class="dadosDeContato">
+              <li>Email: marcojunkes@ufpr.br</li>
+              <li><a href="https://www.linkedin.com/in/marco-junkes-601b6223b/">Linkedin</a></li>
+              <li>Data de última atualização: 30/05/2023</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </body>
 
 <footer class="bg-primary text-white py-4">
@@ -135,25 +141,3 @@
     </div>
   </div>
 </footer>
-
-<script>
-  $(document).ready(function () {
-    // Quando o botão for clicado
-    $('table button').click(function () {
-      // Encontra a linha da tabela
-      var row = $(this).closest('tr');
-
-      // Verifica se o dropdown já foi criado
-      if (row.next().hasClass('course-details')) {
-        // Remove o dropdown se já existir
-        row.next().remove();
-      } else {
-        // Cria o dropdown se não existir
-        var courseDetails = '<tr class="course-details"><td colspan="3"><div class="card card-body"><h4>Detalhes do curso</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit, lorem sed semper auctor, neque dolor mollis dolor, eu porttitor nisi nisl id leo.</p></div></td></tr>';
-        row.after(courseDetails);
-      }
-    });
-  });
-</script>
-
-</html>

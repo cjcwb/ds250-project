@@ -24,7 +24,7 @@
           <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="cursos.html">Cursos</a>
           </li>
           <li class="nav-item">
@@ -33,7 +33,7 @@
           <li class="nav-item">
             <a class="nav-link" href="docentes.html">Docentes</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="sobre.html">Sobre o SEPT</a>
           </li>
           <li class="nav-item">
@@ -50,70 +50,36 @@
   </nav>
 
   <div class="container">
-    <h2>Cursos SEPT</h2>
+    <h2>Sobre o SEPT</h2>
+    <div class="container">
+      <p>O Setor de Educação Profissional e Tecnológica (SEPT) é a unidade de ensino, pesquisa e extensão da
+        Universidade Federal do Paraná que coordena os cursos de educação Profissional e Tecnológica, a ele vinculados,
+        em todos os níveis. O SEPT oferece cursos de formação profissional para jovens e adultos atuarem em funções
+        técnicas profissionais, segundo a área de identificação, atendendo as demandas regionais.</p>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Curso</th>
-          <th scope="col">Duração</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Luteria
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Secretariado
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                TADS
-              </button>
-            </div>
-          </td>
-          <td>3 anos</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                #####
-              </button>
-            </div>
-          </td>
-          <td># anos</td>
-        </tr>
-      </tbody>
-    </table>
+      <div id="player-container">
+        <div id="player"></div>
+      </div>
+    </div>
 
+    <script>
+      function onYouTubeIframeAPIReady() {
+        var player = new YT.Player('player', {
+          height: '315',
+          width: '560',
+          videoId: 'vu7iJQ6AY-E',
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
   </div>
-
 </body>
 
 <footer class="bg-primary text-white py-4">
@@ -135,25 +101,3 @@
     </div>
   </div>
 </footer>
-
-<script>
-  $(document).ready(function () {
-    // Quando o botão for clicado
-    $('table button').click(function () {
-      // Encontra a linha da tabela
-      var row = $(this).closest('tr');
-
-      // Verifica se o dropdown já foi criado
-      if (row.next().hasClass('course-details')) {
-        // Remove o dropdown se já existir
-        row.next().remove();
-      } else {
-        // Cria o dropdown se não existir
-        var courseDetails = '<tr class="course-details"><td colspan="3"><div class="card card-body"><h4>Detalhes do curso</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit, lorem sed semper auctor, neque dolor mollis dolor, eu porttitor nisi nisl id leo.</p></div></td></tr>';
-        row.after(courseDetails);
-      }
-    });
-  });
-</script>
-
-</html>
