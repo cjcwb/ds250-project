@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -122,8 +124,36 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Estado do RG</span>
           </div>
-          <input type="text" class="form-control" aria-label="Estado do RG" aria-describedby="inputGroup-sizing-default"
-            id="estadoRG" name="estadoRG" required>
+          <select class="form-select form-select-md" id="estadoRG" name="estadoRG" required>
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -208,3 +238,39 @@
     </div>
   </div>
 </footer>
+
+<script>
+  $(document).ready(function () {
+    // Máscara para o campo CPF
+    $('#cpf').mask('000.000.000-00');
+
+    // Máscara para o campo CEP
+    $('#cep').mask('00000-000');
+
+    // Máscara para o campo RG
+    $('#rg').mask('00000000-0');
+
+    // Validador do formulário
+    $('form').validate({
+      errorClass: 'is-invalid',
+      validClass: 'is-valid',
+      errorPlacement: function (error, element) {
+        // Personalize o posicionamento do erro, se necessário
+        error.addClass('invalid-feedback');
+        error.insertAfter(element);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass(errorClass).removeClass(validClass);
+        $(element).closest('.input-group').addClass('has-validation');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass(errorClass).addClass(validClass);
+        $(element).closest('.input-group').removeClass('has-validation');
+      },
+      submitHandler: function (form) {
+        alert('Cadastro realizado com sucesso!');
+        form.reset();
+      }
+    });
+  });
+</script>

@@ -145,3 +145,9 @@ p {
 .dadosDeContato li a:hover {
   text-decoration: underline;
 }
+
+.invalid-feedback {
+  display: block;
+  color: red;
+}
+
