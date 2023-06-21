@@ -115,14 +115,7 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Orgão Emissor</span>
-          </div>
-          <input type="text" class="form-control" aria-label="orgaoEmissor" aria-describedby="inputGroup-sizing-default"
-            id="orgaoEmissor" name="orgaoEmissor" required>
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Estado do RG</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">UF</span>
           </div>
           <select class="form-select form-select-md" id="estadoRG" name="estadoRG" required>
             <option value="">Selecione</option>
@@ -154,6 +147,13 @@
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantins</option>
           </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Orgão Emissor</span>
+          </div>
+          <input type="text" class="form-control" aria-label="orgaoEmissor" aria-describedby="inputGroup-sizing-default"
+            id="orgaoEmissor" name="orgaoEmissor" required>
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -241,21 +241,16 @@
 
 <script>
   $(document).ready(function () {
-    // Máscara para o campo CPF
     $('#cpf').mask('000.000.000-00');
 
-    // Máscara para o campo CEP
     $('#cep').mask('00000-000');
 
-    // Máscara para o campo RG
     $('#rg').mask('00000000-0');
 
-    // Validador do formulário
     $('form').validate({
       errorClass: 'is-invalid',
       validClass: 'is-valid',
       errorPlacement: function (error, element) {
-        // Personalize o posicionamento do erro, se necessário
         error.addClass('invalid-feedback');
         error.insertAfter(element);
       },
@@ -266,6 +261,28 @@
       unhighlight: function (element, errorClass, validClass) {
         $(element).removeClass(errorClass).addClass(validClass);
         $(element).closest('.input-group').removeClass('has-validation');
+      },
+      rules: {
+        cpf: {
+          minlength: 14 // CPF com máscara possui 14 caracteres (incluindo os pontos e o traço)
+        },
+        rg: {
+          minlength: 10 // RG com máscara possui 10 caracteres (incluindo o traço)
+        },
+        cep: {
+          minlength: 9 // CEP com máscara possui 9 caracteres (incluindo o traço)
+        }
+      },
+      messages: {
+        cpf: {
+          minlength: 'Por favor, digite um CPF válido.'
+        },
+        rg: {
+          minlength: 'Por favor, digite um RG válido.'
+        },
+        cep: {
+          minlength: 'Por favor, digite um CEP válido.'
+        }
       },
       submitHandler: function (form) {
         alert('Cadastro realizado com sucesso!');
